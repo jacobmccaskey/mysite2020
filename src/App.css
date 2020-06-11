@@ -1,38 +1,84 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC&family=Architects+Daughter&family=Dancing+Script:wght@600&display=swap");
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
+.sidenav {
   text-align: center;
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 30px;
+  color: rgb(184, 184, 82);
+  display: block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.sidenav a:hover {
+  color: #f1f1f1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.round-pic {
+  margin-top: 2rem;
+  position: relative;
+  width: 80%;
+  height: auto;
+  border-radius: 10%;
 }
 
-.App-link {
-  color: #61dafb;
+.body {
+  font-family: "Amatic SC", cursive;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cursive {
+  font-family: "Dancing Script", cursive;
+}
+
+.header {
+  font-family: "Architects Daughter", cursive;
+}
+
+.img-link {
+  background-color: white;
+  border-radius: 25%;
+  height: 48px;
+}
+
+.img-link:hover {
+  height: 55px;
+}
+
+.div-adjust {
+  margin-left: 22%;
+}
+
+.body-div {
+  margin-top: 3%;
+}
+
+p {
+  font-size: 28px;
+  font-weight: 600;
+}
+span {
+  font-size: 28px;
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+span:hover {
+  color: green;
+}
+
+.github-body {
+  display: inline-flex;
 }
