@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import ContactModal from "./contact-modal";
+import { Link } from "react-router-dom";
 import myPic from "./img/mypic.jpg";
 import phone from "./img/phone.png";
 import email from "./img/email.png";
@@ -25,14 +27,18 @@ function NavBar() {
           <img src={phone} alt="phone icon" className="img-link mr-1" />
 
           <img className="img-link mr-1" src={email} alt="email" />
+          <Link className="body" to="/">
+            Home
+          </Link>
 
-          <a className="body" href="">
+          <Link className="body" to="/resume">
             Resume
-          </a>
+          </Link>
 
-          <a className="body" href="#">
+          {/* <a className="body" href="#">
             Contact Me
-          </a>
+          </a> */}
+          <ContactModal />
         </div>
       </div>
     </div>

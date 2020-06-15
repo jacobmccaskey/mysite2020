@@ -1,6 +1,5 @@
 import React from "react";
 import ImageGallery from "react-image-gallery";
-
 import bookFinder from "./img/book-finder.jpg";
 import nodeScraper from "./img/node-web-scraper.jpg";
 import socialist from "./img/socialist.jpg";
@@ -23,21 +22,20 @@ const images = [
 ];
 
 function Projects() {
-  let repo = [];
-  fetch("https://api.github.com/users/jacobmccaskey/repos")
-    .then((response) => response.json())
-    .then((data) => data.forEach((item) => repo.push(item)));
-
-  console.log(repo.forEach((item) => item));
   return (
     <React.Fragment>
-      <div className="container">
+      <div className="container mt-4">
         <ImageGallery items={images} />
         <div className="github-body">
           <p className="body">GitHub</p>
-          <img src={githublogo} alt="github" />
+          <img
+            src={githublogo}
+            onClick={() => {
+              window.open("https://github.com/jacobmccaskey?tab=repositories");
+            }}
+            alt="github"
+          />
           <br className="mt-2" />
-          <ul></ul>
         </div>
       </div>
     </React.Fragment>

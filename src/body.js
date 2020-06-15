@@ -1,8 +1,8 @@
-import React from "react";
-import Projects from "./projects";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Slide from "react-reveal/Slide";
 
-function Body() {
+function Body(props) {
   return (
     <div className="container body-div">
       <Slide right>
@@ -22,9 +22,24 @@ function Body() {
           are in React. I have used AWS EC2 instanaces & Firebase extensively on
           the backend for many projects.
         </p>
-        <span className="body mt-2">View Projects</span>
+        <hr />
+        <table>
+          <tr>
+            <th>
+              <Link to="/projects">
+                <p className="body mt-2" style={{ fontSize: "30px" }}>
+                  View Projects
+                </p>
+              </Link>
+            </th>
+            <th className="mr-4">
+              <p className="body mt-2 ml-3" style={{ fontSize: "30px" }}>
+                Contact Me
+              </p>
+            </th>
+          </tr>
+        </table>
       </Slide>
-      <Projects />
     </div>
   );
 }

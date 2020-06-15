@@ -1,17 +1,24 @@
 import React from "react";
 import NavBar from "./navbar";
 import Body from "./body";
+import Resume from "./resume";
+import Projects from "./projects";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 function App() {
   return (
-    <div>
-      <NavBar />
-      <div className="div-adjust">
-        <Body />
+    <Router>
+      <div>
+        <NavBar />
+        <div className="div-adjust">
+          <Route exact path="/" component={Body} />
+          <Route path="/projects" component={Projects} />
+          <Route path="/resume" component={Resume} />
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
