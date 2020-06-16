@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Slide from "react-reveal/Slide";
+import ContactModal from "./contact-modal";
 
 function Body(props) {
   return (
@@ -10,35 +11,32 @@ function Body(props) {
           About Me
         </h1>
         <p className="header mt-2">
-          I am a full stack web developer. I build and deploy user friendly,
-          responsive websites with my clients best interests at heart. The best
-          part about programming is that I am never done learning. There is
-          always something evolving, changing, and growing within our world and
-          I love every moment of it. I am a self taught learner, and I know the
-          journey has just begun. There are several projects I am working on,
-          and a few have been made publicy available on my GitHub. Please take a
-          look and leave some feedback! My strongest language is Javascript and
-          I am familiar with React and Node. Most of my projects as of recently
-          are in React. I have used AWS EC2 instanaces & Firebase extensively on
-          the backend for many projects.
+          I'm a full stack web developer. What does that mean? I build and
+          deploy user-friendly, responsive websites with my clients best
+          interests at heart.
+          <br />
+          The best part about programming is that I am never done learning. The
+          field is always evolving, changing, and growing within our world and
+          it is my duty to utilize & create products that people will want to
+          come back too, day after day. There are several projects I am working
+          on at any one time, and a few have been made publicy available on
+          GitHub.
+          <br />
+          Please contact me if you have any questions or development ideas you
+          would like to explore. Lets make the world better!
+          <br />
         </p>
+        <span className="header">
+          <i>Before software can be reusable it first has to be usable.</i>-
+          Ralph Johnson
+        </span>
         <hr />
-        <table>
-          <tr>
-            <th>
-              <Link to="/projects">
-                <p className="body mt-2" style={{ fontSize: "30px" }}>
-                  View Projects
-                </p>
-              </Link>
-            </th>
-            <th className="mr-4">
-              <p className="body mt-2 ml-3" style={{ fontSize: "30px" }}>
-                Contact Me
-              </p>
-            </th>
-          </tr>
-        </table>
+
+        <Link to="/projects">
+          <p className="body mt-2 project-link" style={{ fontSize: "45px" }}>
+            View Projects
+          </p>
+        </Link>
       </Slide>
     </div>
   );

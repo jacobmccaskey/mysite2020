@@ -106,3 +106,12 @@ textarea {
   width: 80%;
   height: 150px;
 }
+
+.project-link {
+  font-size: 45px;
+  color: rgb(184, 184, 82);
+}
+
+.project-link:hover {
+  color: black;
+}
