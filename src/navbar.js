@@ -62,9 +62,6 @@ function NavBar() {
             Resume
           </Link>
 
-          {/* <a className="body" href="#">
-            Contact Me
-          </a> */}
           <ContactModal />
         </div>
       </div>
