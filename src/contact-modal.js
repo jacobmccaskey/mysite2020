@@ -1,6 +1,12 @@
 import React, { Component } from "react";
 import Modal from "react-bootstrap/Modal";
 
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
+
 class ContactModal extends Component {
   state = {
     showMod: false,
@@ -16,7 +22,13 @@ class ContactModal extends Component {
     });
   }
   formSubmit = (e) => {
-    console.log(JSON.stringify(this.state));
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "contact-form": "contact", ...this.state }),
+    })
+      .then(() => alert("Success!"))
+      .catch((error) => alert(error));
 
     this.setState({
       showMod: false,
@@ -27,11 +39,13 @@ class ContactModal extends Component {
     });
     e.preventDefault();
   };
+
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
     });
   };
+
   render() {
     const { showMod, email, nameVal, message } = this.state;
     return (
@@ -53,8 +67,7 @@ class ContactModal extends Component {
           <Modal.Body>
             <form
               onSubmit={(e) => this.formSubmit(e)}
-              name="contact"
-              method="POST"
+              name="contact-form"
               data-netlify="true"
             >
               <span className="body">Name</span>
