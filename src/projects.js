@@ -26,7 +26,7 @@ function Projects() {
 
   useEffect(() => {
     function getGitRepos() {
-      fetch("https:api.github.com/users/jacobmccaskey/repos")
+      fetch("https://api.github.com/users/jacobmccaskey/repos")
         .then((response) => {
           return response.json();
         })
