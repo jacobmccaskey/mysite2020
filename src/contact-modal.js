@@ -51,7 +51,12 @@ class ContactModal extends Component {
             Contact Me
           </Modal.Header>
           <Modal.Body>
-            <form onSubmit={(e) => this.formSubmit(e)}>
+            <form
+              onSubmit={(e) => this.formSubmit(e)}
+              name="contact"
+              method="POST"
+              data-netlify="true"
+            >
               <span className="body">Name</span>
               <br />
               <input
