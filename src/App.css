@@ -81,11 +81,7 @@ p {
 span {
   font-size: 28px;
   font-weight: 400;
-  text-decoration: underline;
-}
-
-span:hover {
-  color: green;
+  /* text-decoration: underline; */
 }
 
 .github-body {

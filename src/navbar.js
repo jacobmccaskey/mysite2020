@@ -29,6 +29,7 @@ function NavBar() {
           src={myPic}
           alt="Jacob McCaskey"
           className="border-bottom-0 round-pic"
+          loading="lazy"
         />
         <p
           className="mt-2 cursive"

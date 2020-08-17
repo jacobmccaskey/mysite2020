@@ -32,7 +32,10 @@ function Body(props) {
         <hr />
 
         <Link to="/projects">
-          <p className="body mt-2 project-link" style={{ fontSize: "45px" }}>
+          <p
+            className="body mt-2 project-link"
+            style={{ fontSize: "45px", textDecoration: "underline" }}
+          >
             View Projects
           </p>
         </Link>

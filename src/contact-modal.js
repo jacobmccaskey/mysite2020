@@ -1,16 +1,11 @@
 import React, { Component } from "react";
 import Modal from "react-bootstrap/Modal";
-
-const encode = (data) => {
-  return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&");
-};
+import emailjs from "emailjs-com";
 
 class ContactModal extends Component {
   state = {
     showMod: false,
-    nameVal: "",
+    user_name: "",
     email: "",
     message: "",
     completedMessage: false,
@@ -22,17 +17,32 @@ class ContactModal extends Component {
     });
   }
   formSubmit = (e) => {
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "contact-form": "contact", ...this.state }),
-    })
-      .then(() => alert("Success!"))
-      .catch((error) => alert(error));
+    const { user_name, email, message } = this.state;
+
+    let templateParams = {
+      email: email,
+      name: user_name,
+      message: message,
+    };
+    emailjs
+      .sendForm(
+        "default service",
+        "template_NGLdFCtJ",
+        templateParams,
+        "user_fU2I16AUegqrB9U5h5Hx1"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
 
     this.setState({
       showMod: false,
-      nameVal: "",
+      user_name: "",
       email: "",
       message: "",
       completedMessage: true,
@@ -47,7 +57,7 @@ class ContactModal extends Component {
   };
 
   render() {
-    const { showMod, email, nameVal, message } = this.state;
+    const { showMod, email, user_name, message } = this.state;
     return (
       <React.Fragment>
         <span onClick={() => this.setShow(true)} className="contact-btn body">
@@ -65,18 +75,14 @@ class ContactModal extends Component {
             Contact Me
           </Modal.Header>
           <Modal.Body>
-            <form
-              onSubmit={(e) => this.formSubmit(e)}
-              name="contact-form"
-              data-netlify="true"
-            >
+            <form onSubmit={(e) => this.formSubmit(e)} name="contact-form">
               <span className="body">Name</span>
               <br />
               <input
                 type="text"
                 onChange={(e) => this.handleChange(e)}
-                name="nameVal"
-                value={nameVal}
+                name="user_name"
+                value={user_name}
               />
               <br />
               <span className="body">Email</span>
@@ -97,7 +103,11 @@ class ContactModal extends Component {
                 value={message}
               />
               <br />
-              <button type="submit" className=" btn btn-outline-secondary body">
+              <button
+                type="submit"
+                className=" btn btn-outline-secondary body"
+                value="send"
+              >
                 submit
               </button>
             </form>
