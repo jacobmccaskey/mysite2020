@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ImageGallery from "react-image-gallery";
 import bookFinder from "./img/book-finder.jpg";
-import nodeScraper from "./img/node-web-scraper.jpg";
 import socialist from "./img/socialist.jpg";
 import kwsite from "./img/kwtech.jpg";
 import githublogo from "./img/github.svg";
@@ -13,9 +12,7 @@ const images = [
   {
     original: `${bookFinder}`,
   },
-  {
-    original: `${nodeScraper}`,
-  },
+
   {
     original: `${socialist}`,
   },
