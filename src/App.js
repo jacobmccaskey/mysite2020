@@ -13,7 +13,7 @@ function App() {
       <div>
         <NavBar />
         <div className="div-adjust">
-          <Route exact path="/" component={Body} />
+          <Route exact path="/" render={() => <Body />} />
           <Route path="/projects" component={Projects} />
           <Route path="/resume" component={Resume} />
         </div>

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="/src/img/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
 
@@ -14,6 +14,18 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script>
+      window.addEventListener("load", function () {
+        let lazy = document.getElementsByClassName("headshot");
+        for (let n = 0, len = lazy.length; n < len; n++) {
+          lazy[0].children[0].setAttribute(
+            "src",
+            lazy[0].getAttribute("data-src")
+          );
+          lazy[0].children[0].classList.add("no-blur");
+        }
+      });
+    </script>
     <div id="root"></div>
   </body>
 </html>

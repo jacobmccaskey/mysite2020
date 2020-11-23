@@ -4,6 +4,17 @@ import bookFinder from "./img/book-finder.jpg";
 import socialist from "./img/socialist.jpg";
 import kwsite from "./img/kwtech.jpg";
 import githublogo from "./img/github.svg";
+import { RingLoader } from "react-spinners";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: "grid",
+  },
+  card: {
+    border: "solid black",
+  },
+}));
 
 const images = [
   {
@@ -20,6 +31,7 @@ const images = [
 
 function Projects() {
   const [repos, setRepos] = useState([]);
+  const style = useStyles();
 
   useEffect(() => {
     function getGitRepos() {
@@ -33,7 +45,6 @@ function Projects() {
     }
     getGitRepos();
   }, []);
-  console.log(repos);
   return (
     <React.Fragment>
       <div className="container mt-4">
@@ -50,19 +61,22 @@ function Projects() {
           <br className="mt-2" />
         </div>
         <div className="body container">
-          {repos.map((item) => (
-            <div
-              key={item.id}
-              className="container-sm rounded border border-success mb-2"
-            >
-              <p>
-                <a key={item.name} href={item.html_url}>
-                  {item.name}
-                </a>
-              </p>
-              <span>{item.description}</span>
-            </div>
-          ))}
+          <div className={style.root}>
+            {repos.length === 0 || !repos ? (
+              <RingLoader />
+            ) : (
+              repos.map((item) => (
+                <div key={item.id} className={style.card}>
+                  <p>
+                    <a key={item.name} href={item.html_url}>
+                      {item.name}
+                    </a>
+                  </p>
+                  <span>{item.description}</span>
+                </div>
+              ))
+            )}
+          </div>
         </div>
       </div>
     </React.Fragment>
@@ -70,3 +84,4 @@ function Projects() {
 }
 
 export default Projects;
+// item.name, item.html_url, item.des
