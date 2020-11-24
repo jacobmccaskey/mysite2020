@@ -6,17 +6,17 @@ import kwsite from "./img/kwtech.jpg";
 import githublogo from "./img/github.svg";
 import Grow from "@material-ui/core/Grow";
 import { RingLoader } from "react-spinners";
-import { makeStyles } from "@material-ui/core/styles";
+// import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "inline-grid",
-  },
-  card: {
-    border: "solid black",
-    display: "inline-grid",
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+//   root: {
+//     display: "inline-grid",
+//   },
+//   card: {
+//     border: "solid black",
+//     display: "inline-grid",
+//   },
+// }));
 
 const images = [
   {
@@ -33,7 +33,7 @@ const images = [
 
 function Projects() {
   const [repos, setRepos] = useState([]);
-  const style = useStyles();
+  // const style = useStyles();
 
   useEffect(() => {
     function getGitRepos() {

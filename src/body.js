@@ -6,15 +6,15 @@ import Paper from "@material-ui/core/Paper";
 import myPic from "./img/mypic.jpg";
 import myPicPlaceHolder from "./img/mypicplaceholder.jpg";
 
-import { makeStyles } from "@material-ui/core/styles";
+// import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme) => ({}));
+// const useStyles = makeStyles((theme) => ({}));
 
 const viewProjects = "< View Projects />";
 const aboutMe = "< About_Me />";
 
 function Body(props) {
-  const style = useStyles();
+  // const style = useStyles();
   return (
     <div>
       <div className="mobile-only-header">
