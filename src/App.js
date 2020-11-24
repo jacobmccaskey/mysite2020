@@ -1,5 +1,6 @@
 import React from "react";
 import NavBar from "./navbar";
+import MobileNavbar from "./MobileNavbar";
 import Body from "./body";
 import Resume from "./resume";
 import Projects from "./projects";
@@ -10,8 +11,9 @@ import "./App.css";
 function App() {
   return (
     <Router>
-      <div>
+      <div className="app">
         <NavBar />
+        <MobileNavbar />
         <div className="div-adjust">
           <Route exact path="/" render={() => <Body />} />
           <Route path="/projects" component={Projects} />

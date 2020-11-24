@@ -4,15 +4,17 @@ import bookFinder from "./img/book-finder.jpg";
 import socialist from "./img/socialist.jpg";
 import kwsite from "./img/kwtech.jpg";
 import githublogo from "./img/github.svg";
+import Grow from "@material-ui/core/Grow";
 import { RingLoader } from "react-spinners";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: "grid",
+    display: "inline-grid",
   },
   card: {
     border: "solid black",
+    display: "inline-grid",
   },
 }));
 
@@ -48,7 +50,9 @@ function Projects() {
   return (
     <React.Fragment>
       <div className="container mt-4">
-        <ImageGallery items={images} />
+        <Grow in>
+          <ImageGallery items={images} />
+        </Grow>
         <div className="github-body">
           <p className="body">GitHub</p>
           <img
@@ -61,12 +65,12 @@ function Projects() {
           <br className="mt-2" />
         </div>
         <div className="body container">
-          <div className={style.root}>
+          <div className="row row-cols-3">
             {repos.length === 0 || !repos ? (
               <RingLoader />
             ) : (
               repos.map((item) => (
-                <div key={item.id} className={style.card}>
+                <div key={item.id} className=" dotted-border col m-1">
                   <p>
                     <a key={item.name} href={item.html_url}>
                       {item.name}
