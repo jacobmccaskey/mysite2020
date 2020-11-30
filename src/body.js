@@ -36,19 +36,28 @@ function Body(props) {
         <Grow in={true}>
           <Paper elevation={3} style={{ padding: "2rem" }}>
             <h1 className="body">{aboutMe}</h1>
-            <p className="header mt-2">
-              I'm a full stack web developer.
+            <p className="header mt-2 mb-2">
+              I build and deploy user-friendly, responsive sites with my clients
+              best interests at heart. Websites that stun & keep your users
+              coming back for more.
               <br />
-              What does that mean?
               <br />
-              I build and deploy user-friendly, responsive websites with my
-              clients best interests at heart.
+              E-commerce websites, SPA's, and heavy on the backend apps are my
+              bread and butter. Creating a visually stunning app with the
+              backend to match is what I do from the ground up.
+              <br /> <br />
+              Subscription based services, E-Commerce & apps centered around
+              user input/user experience are a few examples of what I shine in.
               <br />
-              The best part about programming is that I am never done learning.
-              The field is always evolving, changing, and growing and my duty to
-              utilize & create products that people will want to come back too,
-              day after day. There are several projects I am working on at any
-              one time, and a few have been made publicy available on{" "}
+              <br />
+              The best part about programming is that the only limit is the
+              boundary of one's imagination. Any idea can come to life with a
+              little bit of time and code.
+              <br /> <br />I am never done learning. The field is always
+              evolving and my duty is to utilize & create products that people
+              will want to come back too, day after day.There are several
+              projects I will be working on at any one time, and a few have been
+              made publicy available on{" "}
               <a href="https://github.com/jacobmccaskey">GitHub</a>
             </p>
             <br />
@@ -69,7 +78,11 @@ function Body(props) {
           <Link to="/projects">
             <p
               className="body mt-2 project-link"
-              style={{ fontSize: "45px", textDecoration: "underline" }}
+              style={{
+                fontSize: "45px",
+                textDecoration: "underline",
+                margin: "2rem",
+              }}
             >
               {viewProjects}
             </p>

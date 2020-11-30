@@ -49,37 +49,41 @@ function Projects() {
   }, []);
   return (
     <React.Fragment>
-      <div className="container mt-4">
-        <Grow in>
-          <ImageGallery items={images} />
-        </Grow>
-        <div className="github-body">
-          <p className="body">GitHub</p>
-          <img
-            src={githublogo}
-            onClick={() => {
-              window.open("https://github.com/jacobmccaskey?tab=repositories");
-            }}
-            alt="github"
-          />
-          <br className="mt-2" />
-        </div>
-        <div className="body container">
-          <div className="row row-cols-3">
-            {repos.length === 0 || !repos ? (
-              <RingLoader />
-            ) : (
-              repos.map((item) => (
-                <div key={item.id} className=" dotted-border col m-1">
-                  <p>
-                    <a key={item.name} href={item.html_url}>
-                      {item.name}
-                    </a>
-                  </p>
-                  <span>{item.description}</span>
-                </div>
-              ))
-            )}
+      <div className=" container mt-4">
+        <div className="mobile-wrapper">
+          <Grow in>
+            <ImageGallery items={images} />
+          </Grow>
+          <div className="github-body">
+            <p className="body">GitHub</p>
+            <img
+              src={githublogo}
+              onClick={() => {
+                window.open(
+                  "https://github.com/jacobmccaskey?tab=repositories"
+                );
+              }}
+              alt="github"
+            />
+            <br className="mt-2" />
+          </div>
+          <div className="body container">
+            <div className="row row-cols-3">
+              {repos.length === 0 || !repos ? (
+                <RingLoader />
+              ) : (
+                repos.map((item) => (
+                  <div key={item.id} className=" dotted-border col m-1">
+                    <p>
+                      <a key={item.name} href={item.html_url}>
+                        {item.name}
+                      </a>
+                    </p>
+                    <span>{item.description}</span>
+                  </div>
+                ))
+              )}
+            </div>
           </div>
         </div>
       </div>

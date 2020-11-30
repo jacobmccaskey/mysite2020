@@ -21,7 +21,11 @@ export default function Resume() {
   return (
     <div className="mt-4 container">
       <Grow in>
-        <Paper elevation={3} style={{ padding: "2rem" }}>
+        <Paper
+          elevation={3}
+          style={{ padding: "2rem" }}
+          className="mobile-wrapper"
+        >
           <h1
             className="body resumeheader mb-2"
             style={{ textDecoration: "underline" }}
