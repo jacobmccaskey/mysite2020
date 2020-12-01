@@ -2,8 +2,14 @@ import React, { Component } from "react";
 import Modal from "react-bootstrap/Modal";
 import emailjs from "emailjs-com";
 
+const hireMe = "< Hire Me />";
+const serviceID = "gmail";
+const templateID = "template_NGLdFCtJ";
+const userID = process.env.REACT_APP_EMAILJS;
+
 class ContactModal extends Component {
   state = {
+    formStatus: "submit",
     showMod: false,
     user_name: "",
     email: "",
@@ -16,29 +22,35 @@ class ContactModal extends Component {
       showMod: value,
     });
   }
+
+  setDefaultFormButton() {
+    this.setState({
+      formStatus: "submit",
+    });
+  }
+
   formSubmit = (e) => {
+    e.preventDefault();
     const { user_name, email, message } = this.state;
+    this.setState({
+      formStatus: "sending...",
+    });
 
     let templateParams = {
       email: email,
       name: user_name,
       message: message,
+      reply_to: email,
     };
-    emailjs
-      .sendForm(
-        "default service",
-        "template_NGLdFCtJ",
-        templateParams,
-        "user_fU2I16AUegqrB9U5h5Hx1"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
-      );
+    emailjs.send(serviceID, templateID, templateParams, userID).then(
+      function (response) {
+        this.BodysetDefaultFormButton();
+        console.log(response.status);
+      },
+      function (error) {
+        console.log("FAILED...", error);
+      }
+    );
 
     this.setState({
       showMod: false,
@@ -47,7 +59,6 @@ class ContactModal extends Component {
       message: "",
       completedMessage: true,
     });
-    e.preventDefault();
   };
 
   handleChange = (e) => {
@@ -61,7 +72,7 @@ class ContactModal extends Component {
     return (
       <React.Fragment>
         <span onClick={() => this.setShow(true)} className="contact-btn body">
-          Contact Me
+          {hireMe}
         </span>
         ;
         <Modal
@@ -72,7 +83,7 @@ class ContactModal extends Component {
           onHide={() => this.setShow(false)}
         >
           <Modal.Header className="header" ref={React.createRef()} closeButton>
-            Contact Me
+            Message
           </Modal.Header>
           <Modal.Body>
             <form onSubmit={(e) => this.formSubmit(e)} name="contact-form">
@@ -108,7 +119,7 @@ class ContactModal extends Component {
                 className=" btn btn-outline-secondary body"
                 value="send"
               >
-                submit
+                {this.state.formStatus}
               </button>
             </form>
           </Modal.Body>

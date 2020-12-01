@@ -11,6 +11,10 @@ import EmailIcon from "@material-ui/icons/Email";
 import Box from "@material-ui/core/Box";
 import { makeStyles } from "@material-ui/core/styles";
 
+const home = "< Home />";
+const projects = "< Projects />";
+const resume = "< Resume />";
+
 const useStyles = makeStyles((theme) => ({
   backgroundPic: {
     height: "100%",
@@ -106,11 +110,14 @@ function NavBar() {
           </div>
         </Box>
         <Link className="body" to="/">
-          Home
+          {home}
         </Link>
 
         <Link className="body" to="/resume">
-          Resume
+          {resume}
+        </Link>
+        <Link className="body" to="/projects">
+          {projects}
         </Link>
 
         <ContactModal />
