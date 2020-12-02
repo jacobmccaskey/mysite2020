@@ -13,6 +13,7 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import EmailIcon from "@material-ui/icons/Email";
 import PhoneIphoneIcon from "@material-ui/icons/PhoneIphone";
 import Modal from "react-bootstrap/Modal";
+import ContactModal from "./contact-modal";
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -84,6 +85,7 @@ function ModalPhoneNumber(props) {
 export default function MobileNavbar() {
   const [open, setOpen] = useState(false);
   const [showMod, setDisplay] = useState(false);
+  const mobile = true;
   const handleOpenModal = () => {
     setDisplay(true);
     setOpen(false);
@@ -152,6 +154,11 @@ export default function MobileNavbar() {
             >
               {projects}
             </Link>
+
+            <ContactModal
+              mobile={mobile}
+              handleDrawerClose={handleDrawerClose}
+            />
 
             <Box className={style.iconWrapper}>
               <div className={style.iconContainer}>

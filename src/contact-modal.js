@@ -18,6 +18,9 @@ class ContactModal extends Component {
   };
 
   setShow(value) {
+    if (this.props.mobile === true) {
+      this.props.handleDrawerClose();
+    }
     this.setState({
       showMod: value,
     });
