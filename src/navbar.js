@@ -11,7 +11,7 @@ import EmailIcon from "@material-ui/icons/Email";
 import Box from "@material-ui/core/Box";
 import { makeStyles } from "@material-ui/core/styles";
 
-const home = "< Home />";
+const about = "< About Me />";
 const projects = "< Projects />";
 const resume = "< Resume />";
 
@@ -110,14 +110,14 @@ function NavBar() {
           </div>
         </Box>
         <Link className="body" to="/">
-          {home}
+          {projects}
+        </Link>
+        <Link className="body" to="/about">
+          {about}
         </Link>
 
         <Link className="body" to="/resume">
           {resume}
-        </Link>
-        <Link className="body" to="/projects">
-          {projects}
         </Link>
 
         <ContactModal />

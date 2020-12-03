@@ -32,7 +32,7 @@ function Body(props) {
           {/* </div> */}
         </div>
       </div>
-      <div className="container body-div">
+      <div className="container body-div mb-5">
         <Grow in={true}>
           <Paper elevation={3} style={{ padding: "2rem" }}>
             <h1 className="body">{aboutMe}</h1>
@@ -73,7 +73,7 @@ function Body(props) {
           </Paper>
         </Grow>
         <Slide direction="left" in={true} mountOnEnter unmountOnExit>
-          <Link to="/projects">
+          <Link to="/">
             <p
               className="body mt-2 project-link"
               style={{

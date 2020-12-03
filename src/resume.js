@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Resume() {
   const style = useStyles();
   return (
-    <div className="mt-4 container">
+    <div className="mt-4 container mb-5">
       <Grow in>
         <Paper
           elevation={3}

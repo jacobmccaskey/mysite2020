@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 // import ImageGallery from "react-image-gallery";
-import bookFinder from "./img/book-finder.jpg";
-import socialist from "./img/socialist.jpg";
-import kwsite from "./img/kwtech.jpg";
 import githublogo from "./img/github.svg";
 import { RingLoader } from "react-spinners";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
 import ProjectSlider from "./ProjectSlider";
+import Slide from "@material-ui/core/Slide";
+import Grow from "@material-ui/core/Grow";
 
 export const useStyles = makeStyles((theme) => ({
   imageGallery: {
@@ -67,19 +66,6 @@ export const useStyles = makeStyles((theme) => ({
   },
 }));
 
-// const images = [
-//   {
-//     original: `${kwsite}`,
-//   },
-//   {
-//     original: `${bookFinder}`,
-//   },
-
-//   {
-//     original: `${socialist}`,
-//   },
-// ];
-
 function Projects() {
   const [repos, setRepos] = useState([]);
   const style = useStyles();
@@ -108,23 +94,29 @@ function Projects() {
               paddingTop: "2rem",
             }}
           >
-            <div
-              className={style.textContainer}
-              style={{ paddingLeft: "2rem", paddingTop: "2rem" }}
-            >
-              <h2>Websites that meet your needs</h2>
-              <p className="header" style={{ fontSize: "18px" }}>
-                Whether you need a clean website with easy to find resources, a
-                few interactive display elements, or something more visually
-                stunning:
-                <br />I can work with clients to bring their vision to reality.
-              </p>
-              <a href="https://kwtctech.com" style={{ textDecoration: "none" }}>
-                <Button variant="contained" className={style.projectBtn}>
-                  <span style={{ fontSize: "15px" }}>Live Site </span>
-                </Button>
-              </a>
-            </div>
+            <Grow in>
+              <div
+                className={style.textContainer}
+                style={{ paddingLeft: "2rem", paddingTop: "2rem" }}
+              >
+                <h2>Websites that meet your needs</h2>
+                <p className="header" style={{ fontSize: "18px" }}>
+                  Whether you need a clean website with easy to find resources,
+                  a few interactive display elements, or something more visually
+                  stunning:
+                  <br />I can work with clients to bring their vision to
+                  reality.
+                </p>
+                <a
+                  href="https://kwtctech.com"
+                  style={{ textDecoration: "none" }}
+                >
+                  <Button variant="contained" className={style.projectBtn}>
+                    <span style={{ fontSize: "15px" }}>Live Site </span>
+                  </Button>
+                </a>
+              </div>
+            </Grow>
           </div>
           <div
             className={style.projectVideo}
@@ -147,59 +139,61 @@ function Projects() {
         </div>
       </div>
       {/* 2nd project */}
-      <Paper elevation={3}>
-        <div className={style.blockContainer}>
-          <div
-            className={style.desktopGallery}
-            style={{ backgroundColor: "#0e1111", color: "#F8F8FF" }}
-          >
+      <Slide direction="left" in={true} mountOnEnter unmountOnExit>
+        <Paper elevation={3}>
+          <div className={style.blockContainer}>
             <div
-              className={style.projectVideo}
-              style={{
-                paddingTop: "2rem",
-              }}
+              className={style.desktopGallery}
+              style={{ backgroundColor: "#0e1111", color: "#F8F8FF" }}
             >
-              <div className="videoWrapper" style={{ marginLeft: "10%" }}>
-                <iframe
-                  title="book finder demo"
-                  width="560"
-                  height="315"
-                  src="https://www.youtube.com/embed/yT9MpGRJvLw"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+              <div
+                className={style.projectVideo}
+                style={{
+                  paddingTop: "2rem",
+                }}
+              >
+                <div className="videoWrapper" style={{ marginLeft: "10%" }}>
+                  <iframe
+                    title="book finder demo"
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/yT9MpGRJvLw"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
               </div>
-            </div>
-            <div
-              className={style.projectDescription}
-              style={{
-                paddingTop: "2rem",
-              }}
-            >
-              <div className={style.textContainer}>
-                <h2>Have existing or third party API's to work with?</h2>
-                <p className="header" style={{ fontSize: "18px" }}>
-                  One of the most important parts of creating data rich content
-                  is the ability to work with existing and third party
-                  application programming interfaces.
-                  <br />
-                  The ability to sort, organize and paint data on the screen is
-                  paramount. It can also be fun!
-                </p>
-                <a
-                  href="https://flamboyant-northcutt-525d4e.netlify.app"
-                  style={{ textDecoration: "none" }}
-                >
-                  <Button variant="contained" className={style.projectBtn}>
-                    <span style={{ fontSize: "15px" }}>Live Demo </span>
-                  </Button>
-                </a>
+              <div
+                className={style.projectDescription}
+                style={{
+                  paddingTop: "2rem",
+                }}
+              >
+                <div className={style.textContainer}>
+                  <h2>Have existing or third party API's to work with?</h2>
+                  <p className="header" style={{ fontSize: "18px" }}>
+                    One of the most important parts of creating data rich
+                    content is the ability to work with existing and third party
+                    application programming interfaces.
+                    <br />
+                    The ability to sort, organize and paint data on the screen
+                    is paramount. It can also be fun!
+                  </p>
+                  <a
+                    href="https://flamboyant-northcutt-525d4e.netlify.app"
+                    style={{ textDecoration: "none" }}
+                  >
+                    <Button variant="contained" className={style.projectBtn}>
+                      <span style={{ fontSize: "15px" }}>Live Demo </span>
+                    </Button>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </Paper>
+        </Paper>
+      </Slide>
       {/* 3rd project */}
       <div className={style.blockContainer} style={{ marginBottom: "1rem" }}>
         <div className={style.desktopGallery}>
@@ -209,22 +203,24 @@ function Projects() {
               paddingTop: "2rem",
             }}
           >
-            <div
-              className={style.textContainer}
-              style={{ paddingLeft: "2rem", paddingTop: "2rem" }}
-            >
-              <h2 style={{ color: "#0e1111" }}>
-                Developing scalable E-commerce apps from scratch
-              </h2>
-              <p className="header" style={{ fontSize: "18px" }}>
-                Extensive database and API development, user authentication and
-                authorization, microservices, admin consoles for managing a
-                store and database, order fulfillment API, analytics, and real
-                time updates during development. I create scalable apps that are
-                modular in nature and easy to mantain or update without breaking
-                changes.
-              </p>
-            </div>
+            <Grow in>
+              <div
+                className={style.textContainer}
+                style={{ paddingLeft: "2rem", paddingTop: "2rem" }}
+              >
+                <h2 style={{ color: "#0e1111" }}>
+                  Developing scalable E-commerce apps from scratch
+                </h2>
+                <p className="header" style={{ fontSize: "18px" }}>
+                  Extensive database and API development, user authentication
+                  and authorization, microservices, admin consoles for managing
+                  a store and database, order fulfillment API, analytics, and
+                  real time updates during development. I create scalable apps
+                  that are modular in nature and easy to mantain or update
+                  without breaking changes.
+                </p>
+              </div>
+            </Grow>
           </div>
           <div
             className={style.projectVideo}
@@ -247,10 +243,9 @@ function Projects() {
         </div>
       </div>
 
-      <div className=" container mt-4">
+      <div className=" mt-4 container-fluid mb-5">
         <div className="mobile-wrapper">
           <div className={style.imageGallery}>
-            {/* <ImageGallery items={images} /> */}
             <ProjectSlider />
           </div>
 
@@ -267,13 +262,17 @@ function Projects() {
             />
             <br className="mt-2" />
           </div>
-          <div className="body container">
-            <div className="row row-cols-3">
+          <div className=" body" style={{ width: "100%" }}>
+            <div className="container-fluid row row-cols-3">
               {repos.length === 0 || !repos ? (
                 <RingLoader />
               ) : (
                 repos.map((item) => (
-                  <div key={item.id} className=" dotted-border col m-1">
+                  <div
+                    key={item.id}
+                    className="dotted-border col m-1"
+                    style={{ textOverflow: "ellipsis" }}
+                  >
                     <p>
                       <a key={item.name} href={item.html_url}>
                         {item.name}

@@ -2,6 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
 @import "~react-image-gallery/styles/css/image-gallery.css";
 
+.App {
+  margin-bottom: 3rem;
+}
+
 .sidenav {
   text-align: center;
   height: 100%;
@@ -108,7 +112,7 @@ span {
 }
 
 .github-body {
-  display: inline-flex;
+  width: 100%;
 }
 
 .resumeheader {
@@ -173,9 +177,10 @@ textarea {
 
   .div-adjust {
     margin-left: 0%;
+    /* width: "100%"; */
   }
 
-  .body-div {
+  . .body-div {
     /* box-sizing: content-box; */
     width: 100%;
     position: relative;

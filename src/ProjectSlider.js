@@ -60,8 +60,6 @@ export default function ProjectSlider() {
 function KwtcDemo(props) {
   const { style } = props;
   return (
-    // <div className={style.blockContainer} style={{ marginBottom: "1rem" }}>
-    //   <div className={style.desktopGallery}>
     <React.Fragment>
       <div>
         <div style={{ paddingLeft: "1rem", paddingTop: "2rem" }}>
@@ -97,8 +95,6 @@ function KwtcDemo(props) {
         </div>
       </div>
     </React.Fragment>
-    //   </div>
-    // </div>
   );
 }
 

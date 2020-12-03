@@ -62,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const projects = "< Projects />";
-const home = "< Home />";
+const about = "< About Me />";
 const resume = "< Resume />";
 
 function ModalPhoneNumber(props) {
@@ -137,7 +137,14 @@ export default function MobileNavbar() {
               <CloseRoundedIcon style={{ color: "white", fontSize: "35px" }} />
             </Button>
             <Link to="/" className={style.link} onClick={handleDrawerClose}>
-              {home}
+              {projects}
+            </Link>
+            <Link
+              to="/about"
+              className={style.link}
+              onClick={handleDrawerClose}
+            >
+              {about}
             </Link>
 
             <Link
@@ -146,13 +153,6 @@ export default function MobileNavbar() {
               onClick={handleDrawerClose}
             >
               {resume}
-            </Link>
-            <Link
-              to="/projects"
-              className={style.link}
-              onClick={handleDrawerClose}
-            >
-              {projects}
             </Link>
 
             <ContactModal

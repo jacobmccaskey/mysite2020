@@ -15,8 +15,8 @@ function App() {
         <NavBar />
         <MobileNavbar />
         <div className="div-adjust">
-          <Route exact path="/" render={() => <Body />} />
-          <Route path="/projects" component={Projects} />
+          <Route exact path="/" render={() => <Projects />} />
+          <Route path="/about" component={Body} />
           <Route path="/resume" component={Resume} />
         </div>
       </div>
