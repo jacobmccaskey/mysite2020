@@ -77,7 +77,6 @@ class ContactModal extends Component {
         <span onClick={() => this.setShow(true)} className="contact-btn body">
           {hireMe}
         </span>
-        ;
         <Modal
           className="modal-dialog-centered"
           size="lg"

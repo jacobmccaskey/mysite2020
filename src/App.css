@@ -215,3 +215,9 @@ textarea {
   height: 100%;
   /* max-width: 560px; */
 }
+
+.carouselBtn {
+  border-width: none !important;
+  background-color: white;
+  border-color: white;
+}

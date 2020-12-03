@@ -12,6 +12,7 @@
     "download-git-repo": "^3.0.2",
     "emailjs-com": "^2.4.1",
     "github-url-to-object": "^4.0.4",
+    "pure-react-carousel": "^1.27.6",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-burger-menu": "^2.6.15",

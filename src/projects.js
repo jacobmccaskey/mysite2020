@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ImageGallery from "react-image-gallery";
+// import ImageGallery from "react-image-gallery";
 import bookFinder from "./img/book-finder.jpg";
 import socialist from "./img/socialist.jpg";
 import kwsite from "./img/kwtech.jpg";
@@ -8,8 +8,9 @@ import { RingLoader } from "react-spinners";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
+import ProjectSlider from "./ProjectSlider";
 
-const useStyles = makeStyles((theme) => ({
+export const useStyles = makeStyles((theme) => ({
   imageGallery: {
     [theme.breakpoints.down("sm")]: {
       display: "relative",
@@ -66,18 +67,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const images = [
-  {
-    original: `${kwsite}`,
-  },
-  {
-    original: `${bookFinder}`,
-  },
+// const images = [
+//   {
+//     original: `${kwsite}`,
+//   },
+//   {
+//     original: `${bookFinder}`,
+//   },
 
-  {
-    original: `${socialist}`,
-  },
-];
+//   {
+//     original: `${socialist}`,
+//   },
+// ];
 
 function Projects() {
   const [repos, setRepos] = useState([]);
@@ -249,7 +250,8 @@ function Projects() {
       <div className=" container mt-4">
         <div className="mobile-wrapper">
           <div className={style.imageGallery}>
-            <ImageGallery items={images} />
+            {/* <ImageGallery items={images} /> */}
+            <ProjectSlider />
           </div>
 
           <div className="github-body">
