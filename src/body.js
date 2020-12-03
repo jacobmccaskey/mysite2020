@@ -54,11 +54,9 @@ function Body(props) {
               boundary of one's imagination. Any idea can come to life with a
               little bit of time and code.
               <br /> <br />I am never done learning. The field is always
-              evolving and my duty is to utilize & create products that people
-              will want to come back too, day after day.There are several
-              projects I will be working on at any one time, and a few have been
-              made publicy available on{" "}
-              <a href="https://github.com/jacobmccaskey">GitHub</a>
+              evolving and my passion is to create products that people will
+              want to come back too, day after day.
+              <br />
             </p>
             <br />
             <div className="header" style={{ textAlign: "center" }}>

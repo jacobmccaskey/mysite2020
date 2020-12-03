@@ -108,7 +108,7 @@ class ContactModal extends Component {
                 value={email}
               />
               <br />
-              <span className="body">Message</span>
+              <span className="body">Tell me about your business</span>
               <br />
               <textarea
                 type="text"

@@ -42,6 +42,7 @@ const useStyles = makeStyles((theme) => ({
 
   textContainer: {
     width: "80%",
+
     [theme.breakpoints.down("md")]: {
       width: "100%",
     },
@@ -51,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
   },
   projectBtn: {
     textTransform: "none",
-    backgroundColor: "purple",
+    backgroundColor: "#B10DC9",
     borderWidth: "0px",
     color: "black",
     fontSize: "15px",
@@ -60,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
     transition: "1s",
     "&:hover": {
       width: "40%",
-      backgroundColor: "white",
+      backgroundColor: "#FFFFFF",
     },
   },
 }));
@@ -106,7 +107,10 @@ function Projects() {
               paddingTop: "2rem",
             }}
           >
-            <div className={style.textContainer}>
+            <div
+              className={style.textContainer}
+              style={{ paddingLeft: "2rem", paddingTop: "2rem" }}
+            >
               <h2>Websites that meet your needs</h2>
               <p className="header" style={{ fontSize: "18px" }}>
                 Whether you need a clean website with easy to find resources, a
@@ -114,6 +118,11 @@ function Projects() {
                 stunning:
                 <br />I can work with clients to bring their vision to reality.
               </p>
+              <a href="https://kwtctech.com" style={{ textDecoration: "none" }}>
+                <Button variant="contained" className={style.projectBtn}>
+                  <span style={{ fontSize: "15px" }}>Live Site </span>
+                </Button>
+              </a>
             </div>
           </div>
           <div
@@ -128,9 +137,9 @@ function Projects() {
                 width="560"
                 height="315"
                 src="https://www.youtube.com/embed/4TM673GrcE8"
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
+                allowFullScreen
               ></iframe>
             </div>
           </div>
@@ -141,7 +150,7 @@ function Projects() {
         <div className={style.blockContainer}>
           <div
             className={style.desktopGallery}
-            style={{ backgroundColor: "	#0e1111", color: "#F8F8FF" }}
+            style={{ backgroundColor: "#0e1111", color: "#F8F8FF" }}
           >
             <div
               className={style.projectVideo}
@@ -155,9 +164,9 @@ function Projects() {
                   width="560"
                   height="315"
                   src="https://www.youtube.com/embed/yT9MpGRJvLw"
-                  frameborder="0"
+                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
+                  allowFullScreen
                 ></iframe>
               </div>
             </div>
@@ -174,7 +183,7 @@ function Projects() {
                   is the ability to work with existing and third party
                   application programming interfaces.
                   <br />
-                  The ability to sort, organize and paint data to the screen is
+                  The ability to sort, organize and paint data on the screen is
                   paramount. It can also be fun!
                 </p>
                 <a
@@ -190,6 +199,52 @@ function Projects() {
           </div>
         </div>
       </Paper>
+      {/* 3rd project */}
+      <div className={style.blockContainer} style={{ marginBottom: "1rem" }}>
+        <div className={style.desktopGallery}>
+          <div
+            className={style.projectDescription}
+            style={{
+              paddingTop: "2rem",
+            }}
+          >
+            <div
+              className={style.textContainer}
+              style={{ paddingLeft: "2rem", paddingTop: "2rem" }}
+            >
+              <h2 style={{ color: "#0e1111" }}>
+                Developing scalable E-commerce apps from scratch
+              </h2>
+              <p className="header" style={{ fontSize: "18px" }}>
+                Extensive database and API development, user authentication and
+                authorization, microservices, admin consoles for managing a
+                store and database, order fulfillment API, analytics, and real
+                time updates during development. I create scalable apps that are
+                modular in nature and easy to mantain or update without breaking
+                changes.
+              </p>
+            </div>
+          </div>
+          <div
+            className={style.projectVideo}
+            style={{
+              paddingTop: "2rem",
+            }}
+          >
+            <div className="videoWrapper" style={{ marginRight: "10%" }}>
+              <iframe
+                title="ONEDAM DEMO"
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/heP3lUFp2LU"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div className=" container mt-4">
         <div className="mobile-wrapper">
@@ -198,7 +253,7 @@ function Projects() {
           </div>
 
           <div className="github-body">
-            <p className="body">GitHub</p>
+            <p className="body">GitHub Projects</p>
             <img
               src={githublogo}
               onClick={() => {
