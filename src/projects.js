@@ -17,9 +17,10 @@ export const useStyles = makeStyles((theme) => ({
     backgroundColor: "#B10DC9",
     borderWidth: "0px",
     color: "black",
-    fontSize: "15px",
+    fontSize: "18px",
     marginLeft: "1rem",
-    width: "30%",
+    height: "40px",
+    // width: "30%",
     transition: "1s",
     "&:hover": {
       width: "40%",
@@ -273,7 +274,11 @@ function Projects() {
           </div>
           <div style={{ textAlign: "center", display: "block" }}>
             <Link to="/about">
-              <Button className={style.aboutMeBtn}>About Me</Button>
+              <Button className={style.aboutMeBtn}>
+                <p style={{ fontSize: "18px", verticalAlign: "middle" }}>
+                  About me
+                </p>
+              </Button>
             </Link>
           </div>
 
