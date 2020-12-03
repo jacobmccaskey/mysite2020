@@ -34,12 +34,12 @@ function Body(props) {
       </div>
       <div className="container body-div mb-5">
         <Grow in={true}>
-          <Paper elevation={3} style={{ padding: "2rem" }}>
+          <Paper elevation={3} style={{ padding: "2rem", marginTop: "10px" }}>
             <h1 className="body">{aboutMe}</h1>
             <p className="header mt-2 mb-2">
-              I build and deploy user-friendly, responsive sites with my clients
-              best interests at heart. Websites that stun & keep your users
-              coming back for more.
+              My name is Jake McCaskey and I build and deploy user-friendly,
+              responsive sites with my clients best interests at heart. Websites
+              that perform, impress, & keep your users coming back for more.
               <br />
               <br />
               E-commerce websites, SPA's, and heavy on the backend apps are my

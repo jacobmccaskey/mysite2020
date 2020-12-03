@@ -8,8 +8,31 @@ import Button from "@material-ui/core/Button";
 import ProjectSlider from "./ProjectSlider";
 import Slide from "@material-ui/core/Slide";
 import Grow from "@material-ui/core/Grow";
+import { Link } from "react-router-dom";
 
 export const useStyles = makeStyles((theme) => ({
+  aboutMeBtn: {
+    textTransform: "none",
+    textDecoration: "none",
+    backgroundColor: "#B10DC9",
+    borderWidth: "0px",
+    color: "black",
+    fontSize: "15px",
+    marginLeft: "1rem",
+    width: "30%",
+    transition: "1s",
+    "&:hover": {
+      width: "40%",
+      backgroundColor: "#FFFFFF",
+    },
+    [theme.breakpoints.down("sm")]: {
+      display: "relative",
+    },
+    [theme.breakpoints.up("md")]: {
+      display: "none",
+    },
+  },
+
   imageGallery: {
     [theme.breakpoints.down("sm")]: {
       display: "relative",
@@ -247,6 +270,11 @@ function Projects() {
         <div className="mobile-wrapper">
           <div className={style.imageGallery}>
             <ProjectSlider />
+          </div>
+          <div style={{ textAlign: "center", display: "block" }}>
+            <Link to="/about">
+              <Button className={style.aboutMeBtn}>About Me</Button>
+            </Link>
           </div>
 
           <div className="github-body">
