@@ -42,9 +42,9 @@ function Body(props) {
               that perform, impress, & keep your users coming back for more.
               <br />
               <br />
-              E-commerce websites, SPA's, and heavy on the backend apps are my
-              bread and butter. Creating a visually stunning app with the
-              backend to match is what I do from the ground up.
+              E-commerce websites, SPA's, and backend heavy apps are my
+              speciality. Creating a visually stunning app with the backend to
+              match is what I do from the ground up.
               <br /> <br />
               Subscription based services, E-Commerce & apps centered around
               user input/user experience are a few examples of what I shine in.
