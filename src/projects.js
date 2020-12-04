@@ -8,35 +8,12 @@ import Button from "@material-ui/core/Button";
 import ProjectSlider from "./ProjectSlider";
 import Slide from "@material-ui/core/Slide";
 import Grow from "@material-ui/core/Grow";
-import { Link } from "react-router-dom";
 
 export const useStyles = makeStyles((theme) => ({
-  aboutMeBtn: {
-    textTransform: "none",
-    textDecoration: "none",
-    backgroundColor: "#B10DC9",
-    borderWidth: "0px",
-    color: "black",
-    fontSize: "18px",
-    marginLeft: "1rem",
-    height: "40px",
-    // width: "30%",
-    transition: "1s",
-    "&:hover": {
-      width: "40%",
-      backgroundColor: "#FFFFFF",
-    },
-    [theme.breakpoints.down("sm")]: {
-      display: "relative",
-    },
-    [theme.breakpoints.up("md")]: {
-      display: "none",
-    },
-  },
-
+  // looks better without carousel
   imageGallery: {
     [theme.breakpoints.down("sm")]: {
-      display: "relative",
+      display: "none",
     },
     [theme.breakpoints.up("md")]: {
       display: "none",
@@ -46,7 +23,7 @@ export const useStyles = makeStyles((theme) => ({
     width: "100%",
     textAlign: "left",
     [theme.breakpoints.down("sm")]: {
-      display: "none",
+      display: "block",
     },
     [theme.breakpoints.between("md", "sm")]: {
       display: "flex",
@@ -81,11 +58,25 @@ export const useStyles = makeStyles((theme) => ({
     color: "black",
     fontSize: "15px",
     marginLeft: "1rem",
-    width: "30%",
+    width: "40%",
     transition: "1s",
     "&:hover": {
       width: "40%",
       backgroundColor: "#FFFFFF",
+    },
+  },
+
+  hideOnMobile: {
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
+  },
+  displayOnMobile: {
+    backgroundColor: "#0e1111",
+    [theme.breakpoints.down("sm")]: {
+      display: "block",
+      textAlign: "center",
+      paddingBottom: "1rem",
     },
   },
 }));
@@ -176,16 +167,18 @@ function Projects() {
                   paddingTop: "2rem",
                 }}
               >
-                <div className="videoWrapper" style={{ marginLeft: "10%" }}>
-                  <iframe
-                    title="book finder demo"
-                    width="560"
-                    height="315"
-                    src="https://www.youtube.com/embed/yT9MpGRJvLw"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
+                <div className={style.hideOnMobile}>
+                  <div className="videoWrapper" style={{ marginLeft: "10%" }}>
+                    <iframe
+                      title="book finder demo"
+                      width="560"
+                      height="315"
+                      src="https://www.youtube.com/embed/yT9MpGRJvLw"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
                 </div>
               </div>
               <div
@@ -214,6 +207,22 @@ function Projects() {
                   </a>
                 </div>
               </div>
+            </div>
+          </div>
+          <div
+            className={style.displayOnMobile}
+            style={{ backgroundColor: "#0e1111" }}
+          >
+            <div className="videoWrapper">
+              <iframe
+                title="book finder demo"
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/yT9MpGRJvLw"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
             </div>
           </div>
         </Paper>
@@ -271,15 +280,6 @@ function Projects() {
         <div className="mobile-wrapper">
           <div className={style.imageGallery}>
             <ProjectSlider />
-          </div>
-          <div style={{ textAlign: "center", display: "block" }}>
-            <Link to="/about">
-              <Button className={style.aboutMeBtn}>
-                <p style={{ fontSize: "18px", verticalAlign: "middle" }}>
-                  About me
-                </p>
-              </Button>
-            </Link>
           </div>
 
           <div className="github-body">
