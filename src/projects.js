@@ -61,18 +61,26 @@ export const useStyles = makeStyles((theme) => ({
     width: "40%",
     transition: "1s",
     "&:hover": {
-      width: "40%",
+      width: "50%",
       backgroundColor: "#FFFFFF",
     },
   },
 
   hideOnMobile: {
+    display: "relative",
+    [theme.breakpoints.between("md", "sm")]: {
+      display: "relative",
+    },
     [theme.breakpoints.down("sm")]: {
       display: "none",
     },
   },
   displayOnMobile: {
     backgroundColor: "#0e1111",
+    display: "none",
+    [theme.breakpoints.between("sm", "md")]: {
+      display: "none",
+    },
     [theme.breakpoints.down("sm")]: {
       display: "block",
       textAlign: "center",
@@ -109,7 +117,7 @@ function Projects() {
               paddingTop: "2rem",
             }}
           >
-            <Grow in>
+            <Grow in timeout={1000}>
               <div
                 className={style.textContainer}
                 style={{ paddingLeft: "2rem", paddingTop: "2rem" }}
@@ -154,7 +162,13 @@ function Projects() {
         </div>
       </div>
       {/* 2nd project */}
-      <Slide direction="left" in={true} mountOnEnter unmountOnExit>
+      <Slide
+        direction="left"
+        in={true}
+        timeout={1000}
+        mountOnEnter
+        unmountOnExit
+      >
         <Paper elevation={3}>
           <div className={style.blockContainer}>
             <div
