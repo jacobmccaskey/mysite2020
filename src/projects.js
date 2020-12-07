@@ -122,7 +122,9 @@ function Projects() {
                 className={style.textContainer}
                 style={{ paddingLeft: "2rem", paddingTop: "2rem" }}
               >
-                <h2>Websites that meet your needs</h2>
+                <h2 style={{ color: "#7e9a9a" }}>
+                  Websites that meet your needs
+                </h2>
                 <p className="header" style={{ fontSize: "18px" }}>
                   Whether you need a clean website with easy to find resources,
                   a few interactive display elements, or something more visually
@@ -255,7 +257,7 @@ function Projects() {
                 className={style.textContainer}
                 style={{ paddingLeft: "2rem", paddingTop: "2rem" }}
               >
-                <h2 style={{ color: "#0e1111" }}>
+                <h2 style={{ color: "#483D8B" }}>
                   Developing scalable E-commerce apps from scratch
                 </h2>
                 <p className="header" style={{ fontSize: "18px" }}>
