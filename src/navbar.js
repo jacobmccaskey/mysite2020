@@ -11,9 +11,9 @@ import EmailIcon from "@material-ui/icons/Email";
 import Box from "@material-ui/core/Box";
 import { makeStyles } from "@material-ui/core/styles";
 
-const about = "< About Me />";
-const projects = "< Projects />";
-const resume = "< Resume />";
+// const about = "< About Me />";
+// const projects = "< Projects />";
+// const resume = "< Resume />";
 
 const useStyles = makeStyles((theme) => ({
   backgroundPic: {

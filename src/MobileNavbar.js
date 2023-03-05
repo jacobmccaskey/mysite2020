@@ -61,9 +61,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const projects = "< Projects />";
-const about = "< About Me />";
-const resume = "< Resume />";
+// const projects = "< Projects />";
+// const about = "< About Me />";
+// const resume = "< Resume />";
 
 function ModalPhoneNumber(props) {
   return (
