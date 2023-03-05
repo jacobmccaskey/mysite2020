@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
   link: {
     display: "block",
     margin: theme.spacing(1),
-    fontFamily: "Amatic SC, cursive",
+    // fontFamily: "Amatic SC, cursive",
     color: "#FFEC8B",
     fontSize: "30px",
   },
@@ -137,22 +137,22 @@ export default function MobileNavbar() {
               <CloseRoundedIcon style={{ color: "white", fontSize: "35px" }} />
             </Button>
             <Link to="/" className={style.link} onClick={handleDrawerClose}>
-              {projects}
+            <span className="nav-title">Projects</span>
             </Link>
-            <Link
+            {/* <Link
               to="/about"
               className={style.link}
               onClick={handleDrawerClose}
             >
-              {about}
-            </Link>
+              <span className="nav-title">About</span>
+            </Link> */}
 
             <Link
               to="/resume"
               className={style.link}
               onClick={handleDrawerClose}
             >
-              {resume}
+              <span className="nav-title">Resume</span>
             </Link>
 
             <ContactModal

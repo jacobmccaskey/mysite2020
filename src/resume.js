@@ -26,13 +26,13 @@ export default function Resume() {
           style={{ padding: "2rem" }}
           className="mobile-wrapper"
         >
-          <h1
-            className="body resumeheader mb-2"
-            style={{ textDecoration: "underline" }}
+          {/* <h2
+            className="body mb-2"
+            style={{textAlign: 'center', color:'rgb(126, 154, 154)' }}
           >
             Resume
-          </h1>
-          <h4 className="body">Contact:</h4>
+          </h2> */}
+          <h4 className="resumeheader">Contact</h4>
           <ul>
             <li>
               <a className="body" href="mailto:mccaskey316@gmail.com">
@@ -40,7 +40,7 @@ export default function Resume() {
               </a>
             </li>
             <li>
-              <p className="body">813-516-0468</p>
+              <a href="tel:8135160468" className="body">813-516-0468</a>
             </li>
           </ul>
           <h4 className="body resumeheader">Skills</h4>
@@ -65,7 +65,7 @@ export default function Resume() {
             </ul>
           </div>
           <br />
-          <h4 className="body resumeheader">Experience</h4>
+          {/* <h4 className="body resumeheader">Experience</h4>
           <br />
           <div className="header container">
             <ul>
@@ -79,7 +79,7 @@ export default function Resume() {
               </li>
               <li>Freelance 2019-present</li>
             </ul>
-          </div>
+          </div> */}
           <br />
           <div className="container">
             <Link to="/">

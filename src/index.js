@@ -4,13 +4,6 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
-// window.addEventListener("load", function () {
-//   let lazy = document.getElementsByClassName("headshot");
-//   for (let n = 0, len = lazy.length; n < len; n++) {
-//     lazy[0].children[0].setAttribute("src", lazy[0].getAttribute("data-src"));
-//     lazy[0].children[0].classList.add("no-blur");
-//   }
-// });
 
 ReactDOM.render(
   <React.StrictMode>

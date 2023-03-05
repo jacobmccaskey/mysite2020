@@ -5,7 +5,7 @@ import { RingLoader } from "react-spinners";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
-import ProjectSlider from "./ProjectSlider";
+// import ProjectSlider from "./ProjectSlider";
 import Slide from "@material-ui/core/Slide";
 import Grow from "@material-ui/core/Grow";
 
@@ -101,6 +101,10 @@ function Projects() {
         })
         .then((results) => {
           setRepos(results);
+        })
+        .catch((err) => {
+          console.log(err);
+          return setRepos([]);
         });
     }
     getGitRepos();
@@ -291,12 +295,12 @@ function Projects() {
           </div>
         </div>
       </div>
-
-      <div className=" mt-4 container-fluid mb-5">
-        <div className="mobile-wrapper">
-          <div className={style.imageGallery}>
-            <ProjectSlider />
-          </div>
+      <div className={style.blockContainer}>
+        <div
+          className="mt-4 mb-5 container-fluid"
+          style={{ width: "100% !important" }}
+        >
+          <div className={style.imageGallery}>{/* <ProjectSlider /> */}</div>
 
           <div className="github-body">
             <p className="body">GitHub Projects</p>
@@ -311,27 +315,30 @@ function Projects() {
             />
             <br className="mt-2" />
           </div>
-          <div className=" body" style={{ width: "100%" }}>
-            <div className="container-fluid row row-cols-3">
-              {repos.length === 0 || !repos ? (
-                <RingLoader />
-              ) : (
-                repos.map((item) => (
-                  <div
-                    key={item.id}
-                    className="dotted-border col m-1"
-                    style={{ textOverflow: "ellipsis" }}
+          <div className="row" style={{ width: "100%" }}>
+            {repos.length === 0 || !repos ? (
+              <RingLoader />
+            ) : (
+              repos.map((item) => (
+                <Paper
+                  key={item.id}
+                  className="m-1 col-sm-4"
+                  style={{ width: "100%" }}
+                >
+                  <p>
+                    <a key={item.name} href={item.html_url} className="">
+                      {item.name}
+                    </a>
+                  </p>
+                  <p
+                    className="roboto"
+                    style={{ fontSize: "18px", marginBottom: "1rem" }}
                   >
-                    <p>
-                      <a key={item.name} href={item.html_url}>
-                        {item.name}
-                      </a>
-                    </p>
-                    <span>{item.description}</span>
-                  </div>
-                ))
-              )}
-            </div>
+                    {item.description}
+                  </p>
+                </Paper>
+              ))
+            )}
           </div>
         </div>
       </div>

@@ -74,7 +74,7 @@ class ContactModal extends Component {
     const { showMod, email, user_name, message } = this.state;
     return (
       <React.Fragment>
-        <span onClick={() => this.setShow(true)} className="contact-btn body">
+        <span onClick={() => this.setShow(true)} className="contact-btn nav-title">
           {hireMe}
         </span>
         <Modal

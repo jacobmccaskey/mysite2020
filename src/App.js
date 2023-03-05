@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import NavBar from "./navbar";
 import MobileNavbar from "./MobileNavbar";
 import Body from "./body";
@@ -10,6 +10,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 function App() {
+  useEffect(()=> {
+    let lazy = document.getElementsByClassName("headshot");
+    for (let n = 0, len = lazy.length; n < len; n++) {
+      lazy[n].children[0].setAttribute(
+        "src",
+        lazy[0].getAttribute("data-src")
+      );
+      lazy[n].children[0].classList.add("no-blur");
+    }
+  },[])
   return (
     <Router>
       <ScrollRestore />

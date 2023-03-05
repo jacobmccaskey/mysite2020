@@ -109,15 +109,15 @@ function NavBar() {
             <Box className={style.btn} />
           </div>
         </Box>
-        <Link className="body" to="/">
-          {projects}
+        <Link className="nav-title" to="/">
+          Projects
         </Link>
-        <Link className="body" to="/about">
+        {/* <Link className="nav-title" to="/about">
           {about}
-        </Link>
+        </Link> */}
 
-        <Link className="body" to="/resume">
-          {resume}
+        <Link className="nav-title" to="/resume">
+          Resume
         </Link>
 
         <ContactModal />
