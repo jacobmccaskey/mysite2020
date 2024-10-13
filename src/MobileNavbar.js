@@ -11,8 +11,8 @@ import CloseRoundedIcon from "@material-ui/icons/CloseRounded";
 import Box from "@material-ui/core/Box";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import EmailIcon from "@material-ui/icons/Email";
-import PhoneIphoneIcon from "@material-ui/icons/PhoneIphone";
-import Modal from "react-bootstrap/Modal";
+// import PhoneIphoneIcon from "@material-ui/icons/PhoneIphone";
+// import Modal from "react-bootstrap/Modal";
 import ContactModal from "./contact-modal";
 
 const useStyles = makeStyles((theme) => ({
@@ -65,31 +65,31 @@ const useStyles = makeStyles((theme) => ({
 // const about = "< About Me />";
 // const resume = "< Resume />";
 
-function ModalPhoneNumber(props) {
-  return (
-    <Modal
-      className="modal-dialog-centered"
-      size="lg"
-      show={props.showMod}
-      ref={React.createRef()}
-      onHide={() => props.setDisplay(false)}
-    >
-      <Modal.Header closeButton className="body text-center">
-        Call or Text
-      </Modal.Header>
-      <p className="text-center"></p>
-    </Modal>
-  );
-}
+// function ModalPhoneNumber(props) {
+//   return (
+//     <Modal
+//       className="modal-dialog-centered"
+//       size="lg"
+//       show={props.showMod}
+//       ref={React.createRef()}
+//       onHide={() => props.setDisplay(false)}
+//     >
+//       <Modal.Header closeButton className="body text-center">
+//         Call or Text
+//       </Modal.Header>
+//       <p className="text-center"></p>
+//     </Modal>
+//   );
+// }
 
 export default function MobileNavbar() {
   const [open, setOpen] = useState(false);
-  const [showMod, setDisplay] = useState(false);
+  // const [showMod, setDisplay] = useState(false);
   const mobile = true;
-  const handleOpenModal = () => {
-    setDisplay(true);
-    setOpen(false);
-  };
+  // const handleOpenModal = () => {
+  //   setDisplay(true);
+  //   setOpen(false);
+  // };
 
   const style = useStyles();
 

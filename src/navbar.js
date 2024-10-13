@@ -4,7 +4,7 @@ import ContactModal from "./contact-modal";
 import { Link } from "react-router-dom";
 import myPic from "./img/mypic.jpg";
 import myPicPlaceHolder from "./img/mypicplaceholder.jpg";
-import PhoneIphoneIcon from "@material-ui/icons/PhoneIphone";
+// import PhoneIphoneIcon from "@material-ui/icons/PhoneIphone";
 import forest from "./img/forest.jpg";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import EmailIcon from "@material-ui/icons/Email";
@@ -45,25 +45,25 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-function ModalPhoneNumber(props) {
-  return (
-    <Modal
-      className="modal-dialog-centered"
-      size="lg"
-      show={props.showMod}
-      ref={React.createRef()}
-      onHide={() => props.setDisplay(false)}
-    >
-      <Modal.Header closeButton className="body text-center">
-        Call or Text
-      </Modal.Header>
-      <p className="text-center"></p>
-    </Modal>
-  );
-}
+// function ModalPhoneNumber(props) {
+//   return (
+//     <Modal
+//       className="modal-dialog-centered"
+//       size="lg"
+//       show={props.showMod}
+//       ref={React.createRef()}
+//       onHide={() => props.setDisplay(false)}
+//     >
+//       <Modal.Header closeButton className="body text-center">
+//         Call or Text
+//       </Modal.Header>
+//       <p className="text-center"></p>
+//     </Modal>
+//   );
+// }
 
 function NavBar() {
-  const [showMod, setDisplay] = useState(false);
+  // const [showMod, setDisplay] = useState(false);
   const style = useStyles();
   return (
     <div className="sidenav">
