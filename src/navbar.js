@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import Modal from "react-bootstrap/Modal";
+import React from "react";
+// import Modal from "react-bootstrap/Modal";
 import ContactModal from "./contact-modal";
 import { Link } from "react-router-dom";
 import myPic from "./img/mypic.jpg";
