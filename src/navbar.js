@@ -57,7 +57,7 @@ function ModalPhoneNumber(props) {
       <Modal.Header closeButton className="body text-center">
         Call or Text
       </Modal.Header>
-      <p className="text-center">813-516-0468</p>
+      <p className="text-center"></p>
     </Modal>
   );
 }
@@ -69,7 +69,7 @@ function NavBar() {
     <div className="sidenav">
       <img src={forest} alt="background" className={style.backgroundPic} />
       {/* MODAL FOR PHONE NUMBER */}
-      <ModalPhoneNumber showMod={showMod} setDisplay={setDisplay} />
+      {/* <ModalPhoneNumber showMod={showMod} setDisplay={setDisplay} /> */}
       <div className="container-sm">
         {/* progressive image loading, inspired by medium website */}
         <div className="container-sm" style={{ width: "60%" }}>
@@ -98,10 +98,10 @@ function NavBar() {
               className={style.btn}
               onClick={() => window.open("https://github.com/jacobmccaskey")}
             />
-            <PhoneIphoneIcon
+            {/* <PhoneIphoneIcon
               className={style.btn}
               onClick={() => setDisplay(true)}
-            />
+            /> */}
             <EmailIcon
               className={style.btn}
               onClick={() => window.open("mailto:mccaskey316@gmail.com")}

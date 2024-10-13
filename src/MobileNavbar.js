@@ -77,7 +77,7 @@ function ModalPhoneNumber(props) {
       <Modal.Header closeButton className="body text-center">
         Call or Text
       </Modal.Header>
-      <p className="text-center">813-516-0468</p>
+      <p className="text-center"></p>
     </Modal>
   );
 }
@@ -169,10 +169,10 @@ export default function MobileNavbar() {
                     window.open("https://github.com/jacobmccaskey")
                   }
                 />
-                <PhoneIphoneIcon
+                {/* <PhoneIphoneIcon
                   className={style.btn}
                   onClick={handleOpenModal}
-                />
+                /> */}
                 <EmailIcon
                   className={style.btn}
                   onClick={() => window.open("mailto:mccaskey316@gmail.com")}
@@ -183,7 +183,7 @@ export default function MobileNavbar() {
           </div>
         </Drawer>
       </div>
-      <ModalPhoneNumber showMod={showMod} setDisplay={setDisplay} />
+      {/* <ModalPhoneNumber showMod={showMod} setDisplay={setDisplay} /> */}
     </React.Fragment>
   );
 }

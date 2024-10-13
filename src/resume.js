@@ -39,9 +39,9 @@ export default function Resume() {
                 mccaskey316@gmail.com
               </a>
             </li>
-            <li>
-              <a href="tel:8135160468" className="body">813-516-0468</a>
-            </li>
+            {/* <li>
+              <a href="" className="body"></a>
+            </li> */}
           </ul>
           <h4 className="body resumeheader">Skills</h4>
           <br />
